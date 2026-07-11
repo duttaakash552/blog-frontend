@@ -11,15 +11,17 @@ export default function Register() {
         if (user.password === user.confirmPassword) {
             await axios.post("http://localhost:3000/api/user/register", user).then((res) => {
                 setMsg(res.data.message);
-                user.name = "";
-                user.email = "";
-                user.username = "";
-                user.password = "";
-                user.confirmPassword = "";
+                setUser({
+                    name: "",
+                    email: "",
+                    username: "",
+                    password: "",
+                    confirmPassword: ""
+                });
             }).catch((err) => {
                 setMsg(err.response.data.message);
             });
-        }else {
+        } else {
             setMsg("Passwords do not match");
         }
     };
