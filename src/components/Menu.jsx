@@ -38,8 +38,9 @@ export default function Menu() {
                 </>
             ) : (
                 <>
-                    <Link to="/blog-post">Blogs</Link>
+                    <Link to="/blog-post">Post Blogs</Link>
                     <Link to="/profile">Profile</Link>
+                    <Link to="/my-blog">My Blog</Link>
                     <button onClick={handleLogout}>Logout</button>
                 </>
             )}
