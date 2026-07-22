@@ -10,7 +10,7 @@
 7. All blog listing
 * Login, Register frontend validation
 
-8. Edit profile
-9. Comment
-10. Reply comment
+8. Comment
+9. Reply comment
+10. Edit profile
 11. Change password
