@@ -32,6 +32,7 @@ export default function Menu() {
     return (
         <>
             <Link to="/">Home</Link>
+            <Link to="/blogs">Blogs</Link>
             {!isLoggedIn ? (
                 <>
                     <Link to="/login">Login</Link>

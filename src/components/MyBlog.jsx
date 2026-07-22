@@ -20,14 +20,14 @@ export default function MyBlog() {
         }
 
         fetchBlogs();
-    }, [blogs]);
+    }, [msg]);
 
     const deleteBlog = async (id) => {
         try {
             await axios.delete(`http://localhost:3000/api/blog/${id}`).then((response) => {
                 setMsg(response.data.message);
             });
-        } catch(err) {
+        } catch (err) {
             setMsg(err.message);
         }
     }
@@ -36,15 +36,17 @@ export default function MyBlog() {
         <div>
             {msg ?? (<p>{msg}</p>)}
             <h1>My Blog</h1>
-            {blogs.length > 0 ? 
+            {blogs.length > 0 ?
                 blogs.map((blog) => (
                     <div key={blog._id}>
                         <h2>{blog.title}</h2>
                         <p>{blog.content}</p>
                         <Link onClick={() => deleteBlog(blog._id)}>Delete</Link>
+                        <br></br>
+                        <Link to={`/update-post/${blog._id}`}>Edit</Link>
                     </div>
                 ))
-            : (<p>No blogs found.</p>)}
+                : (<p>No blogs found.</p>)}
         </div>
     )
 }
